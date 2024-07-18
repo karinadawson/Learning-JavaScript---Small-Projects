@@ -3,21 +3,26 @@ const chopApples = () => {
   };
   
   const mixCrumble = () => {
-    console.log(
-      "step 2 - mix butter, sugar and flour until crumbly, spread over the apples"
-    );
-  };
-  
+    console.log("step 2 - mix butter, sugar and flour until crumbly, spread over the apples");
+  }
   const bakeCrumble = () => {
     return new Promise((resolve, reject) => {
       const burnt = false;
   
       if (burnt) {
         reject("error - Oh no, burnt crumble!");
-      } else {
+      } 
+      else {
         resolve("step 3 - Perfect golden crumble!");
       }
-    });
+    })
+    .then((bakedCrumble) => {
+        console.log(bakedCrumble);
+        enjoyCrumble();
+      })
+      .catch((burntCrumbleErr) => {
+        console.log(burntCrumbleErr);
+      });
   };
   
   const enjoyCrumble = () => {
@@ -28,13 +33,7 @@ const chopApples = () => {
     chopApples();
     mixCrumble();
     bakeCrumble()
-      .then((bakedCrumble) => {
-        console.log(bakedCrumble);
-        enjoyCrumble();
-      })
-      .catch((burntCrumbleErr) => {
-        console.log(burntCrumbleErr);
-      });
+      
   };
   
   makeCrumble();
