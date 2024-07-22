@@ -31,8 +31,8 @@ const fetchPokemon = (pokemonName) => {
                 weight: data.weight,
                 types: data.types.map(typeInfo => typeInfo.type.name)    
             }
-            console.log(pokemonData);
             return pokemonData
+        console.log(pokemonData);
     })
         .catch((error) => {
             console.log(error);
